@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./App.css";
 
 function App() {
   const [color, setColor] = useState("rgb(0,0,0)");
   const [onOff, setOnOff] = useState(false);
 
-  const isOnOff = {
-    text: onOff ? "켜짐" : "꺼짐",
-  };
-
-  useEffect(() => {
-    console.log("기록");
-  }, [isOnOff]);
+  const isOnOff = useMemo(() => {
+    console.log("유즈메모");
+    return { text: onOff ? "켜짐" : "꺼짐" };
+  }, [onOff]);
 
   return (
     <div className="App">

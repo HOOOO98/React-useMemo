@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -8,6 +8,10 @@ function App() {
   const isOnOff = {
     text: onOff ? "켜짐" : "꺼짐",
   };
+
+  useEffect(() => {
+    console.log("기록");
+  }, [isOnOff]);
 
   return (
     <div className="App">
